@@ -1,0 +1,34 @@
+<div class="body">
+  <div class="body__form-group">
+    <mat-form-field class="search-input">
+      <mat-label>Search</mat-label>
+      <input
+        matInput
+        class="form-control"
+        aria-describedby="search-text"
+        [(ngModel)]="searchText"
+        placeholder="Enter text to search"
+        autofocus
+      />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </div>
+  <ng-template #loading>
+    <mat-spinner class="loading" mode="indeterminate"></mat-spinner>
+  </ng-template>
+  <div class="not-found" *ngIf="products && products.length === 0">
+    Not found
+  </div>
+  <ng-container *ngIf="products; else loading">
+    <mat-grid-list class="body__product-list" cols="3" rowHeight="400px">
+      <mat-grid-tile
+        *ngFor="let p of products | appFilter: searchText | paginate: { itemsPerPage: 6, currentPage: page }"
+      >
+        <app-product [product]="p" [searchText]="searchText"></app-product>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </ng-container>
+  <div>
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+  </div>
+</div>

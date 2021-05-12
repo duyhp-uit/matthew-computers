@@ -1,0 +1,20 @@
+app-header {
+  .header {
+    &__title {
+      display: flex;
+      align-items: center;
+      &__logo {
+        width: 80px;
+        height: 80px;
+      }
+      &__company-name {
+        margin: 0 12px;
+        font-size: 36px;
+      }
+    }
+    &__line {
+      border: 1px solid black;
+      margin-bottom: 24px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+app-search {
+  .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__form-group {
+      .search-input {
+        min-width: 50vw;
+      }
+    }
+    &__product-list {
+      min-width: 964px;
+    }
+  }
+}
