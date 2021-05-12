@@ -1,10 +1,10 @@
 export interface  Product {
-    id: Number;
+    id: number;
     name: string;
     imageUrl: string;
     dateAdded: string;
     dateUpdated: string;
-    price: Number;
+    price: number;
     branch: string;
     code: string;
 }

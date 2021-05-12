@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { Product } from '../../model/product/product.model';
 
 @Component({
@@ -7,10 +7,7 @@ import { Product } from '../../model/product/product.model';
   styleUrls: ['./product.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent {
   @Input('product') product: Product;
   @Input('searchText') searchText: string;
-  constructor() {}
-
-  ngOnInit(): void {}
 }
